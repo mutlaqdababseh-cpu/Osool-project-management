@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osool Project Management | أصول لإدارة المشاريع</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Osool Project Management — expert construction, design, and bid management services in Amman, Jordan. Delivering precision and excellence since 2017.">
+  <meta name="keywords" content="project management, construction management, design management, Amman, Jordan, أصول, إدارة مشاريع">
+  <meta name="author" content="Osool Project Management">
+  <link rel="canonical" href="https://osoolprojects.com/">
+
+  <!-- Open Graph (WhatsApp, LinkedIn, Facebook previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://osoolprojects.com/">
+  <meta property="og:title" content="Osool Project Management | أصول لإدارة المشاريع">
+  <meta property="og:description" content="Expert construction, design, and bid management services in Amman, Jordan. Delivering precision and excellence since 2017.">
+  <meta property="og:image" content="https://osoolprojects.com/brand_assets/osool-logo.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_JO">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Osool Project Management">
+  <meta name="twitter:description" content="Expert project management services in Amman, Jordan.">
+  <meta name="twitter:image" content="https://osoolprojects.com/brand_assets/osool-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/brand_assets/osool-logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            sans: ['Jost', 'sans-serif'],
+            arabic: ['Tajawal', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --teal:        #3d8b82;
+      --teal-dark:   #2a6560;
+      --teal-light:  #5aada3;
+      --teal-xlight: #a8d5d0;
+      --terra:       #9e6b5a;
+      --terra-light: #b8806e;
+      --dark:        #1a2525;
+      --dark-2:      #243333;
+      --dark-3:      #2d3d3d;
+      --cream:       #f5f0eb;
+      --cream-2:     #ede8e3;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.10s; }
+    .reveal-delay-2 { transition-delay: 0.20s; }
+    .reveal-delay-3 { transition-delay: 0.30s; }
+    .reveal-delay-4 { transition-delay: 0.40s; }
+    .reveal-delay-5 { transition-delay: 0.50s; }
+    .reveal-delay-6 { transition-delay: 0.60s; }
+
+    /* ── Nav ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(26,37,37,0.95);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 rgba(245,240,235,0.06);
+    }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1px; background: var(--teal-light);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+    }
+    #mobile-menu.open { max-height: 420px; opacity: 1; }
+
+    /* ── Lang toggle ── */
+    .lang-btn { transition: background 0.2s, color 0.2s; }
+    .lang-btn.active { background: var(--teal); color: white; }
+
+    /* ── Grain overlay ── */
+    .grain::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    }
+
+    /* ── Float animation ── */
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-14px) rotate(2deg); }
+    }
+    .float-1 { animation: float 7s ease-in-out infinite; }
+    .float-2 { animation: float 9s ease-in-out infinite 1.5s; }
+    .float-3 { animation: float 11s ease-in-out infinite 3s; }
+
+    /* ── Scroll indicator ── */
+    @keyframes scrollBar {
+      0%   { transform: translateY(-100%); opacity: 0; }
+      20%  { opacity: 1; }
+      80%  { opacity: 1; }
+      100% { transform: translateY(220%); opacity: 0; }
+    }
+    .scroll-bar { animation: scrollBar 2.2s ease-in-out infinite; }
+
+    /* ── Service card ── */
+    .service-card {
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 16px 48px rgba(26,37,37,0.28) !important;
+    }
+
+    /* ── Section tag ── */
+    .stag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+
+    /* ── Client badge ── */
+    .client-badge {
+      background: white;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--dark);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      min-height: 52px;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .client-badge:hover {
+      box-shadow: 0 6px 20px rgba(61,139,130,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* ── Stat box ── */
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(3rem, 5vw, 4.4rem);
+      line-height: 1;
+      color: var(--cream);
+    }
+    .stat-box {
+      border-top: 2px solid rgba(90,173,163,0.45);
+      padding-top: 20px;
+    }
+
+    /* ── CTA button ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 50px;
+      font-size: 0.875rem; font-weight: 500;
+      background: var(--teal); color: white;
+      box-shadow: 0 4px 20px rgba(61,139,130,0.35);
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 50px;
+      font-size: 0.875rem; font-weight: 500;
+      border: 1px solid rgba(245,240,235,0.28);
+      color: var(--cream);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(245,240,235,0.08); }
+    .btn-ghost:active { transform: scale(0.97); }
+
+    /* ── Triangle bg pattern ── */
+    .tri-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='32,6 58,54 6,54' fill='none' stroke='%234a9a8e' stroke-width='0.7' opacity='0.18'/%3E%3C/svg%3E");
+      background-size: 64px 64px;
+    }
+
+    /* ── Separator line ── */
+    .sep { width: 48px; height: 1px; }
+
+    /* ── Dark section headings ── */
+    .h-display {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+    }
+
+    /* ── Infinite logo cloud slider ── */
+    @keyframes lc-slide {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .lc-cloud {
+      overflow: hidden;
+      padding: 16px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+      mask-image:         linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+      cursor: default;
+    }
+
+    .lc-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 48px;
+      animation: lc-slide 45s linear infinite;
+      will-change: transform;
+    }
+
+    /* Hover slows the scroll (matches speedOnHover) */
+    .lc-cloud:hover .lc-track {
+      animation-duration: 130s;
+    }
+
+    /* Pause on reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .lc-track { animation: none; }
+    }
+
+    .lc-logo {
+      white-space: nowrap;
+      color: #2a3535;
+      opacity: 0.62;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      user-select: none;
+    }
+
+    .lc-logo:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    /* Dot separator between logos */
+    .lc-dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.3;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    /* ── RTL helpers ── */
+    [dir="rtl"] .sep-right { margin-right: 0; margin-left: auto; }
+    [dir="rtl"] .arrow-icon { transform: scaleX(-1); }
+
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; height:76px;">
+
+      <!-- Logo -->
+      <a href="#hero" style="flex-shrink:0; display:flex; align-items:center; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">
+        <div style="background:rgba(255,255,255,0.97); border-radius:10px; padding:4px 10px; display:flex; align-items:center; box-shadow:0 1px 8px rgba(0,0,0,0.22), 0 4px 20px rgba(0,0,0,0.12);">
+          <img src="brand_assets/osool-logo.png" alt="Osool Project Management"
+               style="height:38px; width:auto; display:block;">
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex" style="align-items:center; gap:36px;">
+        <a href="#about"    class="nav-link en-text" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em;" data-ar="عن الشركة">About</a>
+        <a href="#vision"   class="nav-link en-text" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em;" data-ar="رؤيتنا">Vision</a>
+        <a href="#services" class="nav-link en-text" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em;" data-ar="خدماتنا">Services</a>
+        <a href="#clients"  class="nav-link en-text" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em;" data-ar="عملاؤنا">Clients</a>
+        <a href="#contact"  class="nav-link en-text" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em;" data-ar="اتصل بنا">Contact</a>
+        <a href="#about"    class="nav-link ar-text hidden" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em; font-family:'Tajawal',sans-serif;">عن الشركة</a>
+        <a href="#vision"   class="nav-link ar-text hidden" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em; font-family:'Tajawal',sans-serif;">رؤيتنا</a>
+        <a href="#services" class="nav-link ar-text hidden" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em; font-family:'Tajawal',sans-serif;">خدماتنا</a>
+        <a href="#clients"  class="nav-link ar-text hidden" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em; font-family:'Tajawal',sans-serif;">عملاؤنا</a>
+        <a href="#contact"  class="nav-link ar-text hidden" style="font-size:0.82rem; font-weight:500; color:var(--cream); letter-spacing:0.03em; font-family:'Tajawal',sans-serif;">تواصل معنا</a>
+      </div>
+
+      <!-- Lang + CTA -->
+      <div class="hidden md:flex" style="align-items:center; gap:12px;">
+        <!-- Language toggle -->
+        <div style="display:flex; border:1px solid rgba(245,240,235,0.25); border-radius:50px; overflow:hidden;">
+          <button id="lang-en" class="lang-btn active" style="padding:5px 12px; font-size:0.72rem; font-weight:600; color:var(--cream); letter-spacing:0.08em; cursor:pointer; background:none; border:none;">EN</button>
+          <button id="lang-ar" class="lang-btn"        style="padding:5px 12px; font-size:0.72rem; font-weight:600; color:var(--cream); letter-spacing:0.08em; cursor:pointer; background:none; border:none; font-family:'Tajawal',sans-serif;">عربي</button>
+        </div>
+        <a href="#contact" class="btn-primary en-text">Get in Touch</a>
+        <a href="#contact" class="btn-primary ar-text hidden" style="font-family:'Tajawal',sans-serif;">تواصل معنا</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-toggle" class="md:hidden" style="background:none; border:none; cursor:pointer; color:var(--cream); padding:6px;" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" style="background:rgba(26,37,37,0.98);">
+    <div style="padding:16px 24px; display:flex; flex-direction:column; gap:16px;">
+      <a href="#about"    style="font-size:0.9rem; color:var(--cream); font-weight:500;" class="en-text">About</a>
+      <a href="#vision"   style="font-size:0.9rem; color:var(--cream); font-weight:500;" class="en-text">Vision</a>
+      <a href="#services" style="font-size:0.9rem; color:var(--cream); font-weight:500;" class="en-text">Services</a>
+      <a href="#clients"  style="font-size:0.9rem; color:var(--cream); font-weight:500;" class="en-text">Clients</a>
+      <a href="#contact"  style="font-size:0.9rem; color:var(--cream); font-weight:500;" class="en-text">Contact</a>
+      <a href="#about"    style="font-size:0.9rem; color:var(--cream); font-weight:500; font-family:'Tajawal',sans-serif; display:none;" class="ar-text">عن الشركة</a>
+      <a href="#vision"   style="font-size:0.9rem; color:var(--cream); font-weight:500; font-family:'Tajawal',sans-serif; display:none;" class="ar-text">رؤيتنا</a>
+      <a href="#services" style="font-size:0.9rem; color:var(--cream); font-weight:500; font-family:'Tajawal',sans-serif; display:none;" class="ar-text">خدماتنا</a>
+      <a href="#clients"  style="font-size:0.9rem; color:var(--cream); font-weight:500; font-family:'Tajawal',sans-serif; display:none;" class="ar-text">عملاؤنا</a>
+      <a href="#contact"  style="font-size:0.9rem; color:var(--cream); font-weight:500; font-family:'Tajawal',sans-serif; display:none;" class="ar-text">تواصل معنا</a>
+      <div style="display:flex; gap:8px; padding-top:8px; border-top:1px solid rgba(245,240,235,0.1);">
+        <button id="lang-en-m" class="lang-btn active" style="padding:6px 14px; border-radius:50px; border:1px solid rgba(245,240,235,0.25); font-size:0.72rem; font-weight:600; color:var(--cream); cursor:pointer; background:none;">EN</button>
+        <button id="lang-ar-m" class="lang-btn"       style="padding:6px 14px; border-radius:50px; border:1px solid rgba(245,240,235,0.25); font-size:0.72rem; font-weight:600; color:var(--cream); cursor:pointer; background:none; font-family:'Tajawal',sans-serif;">عربي</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section id="hero" class="grain relative" style="min-height:100vh; padding-top:76px; background:var(--dark); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+
+  <!-- Hero background photo -->
+  <img src="https://picsum.photos/id/1031/1920/1080" alt=""
+       style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.38; z-index:0;">
+
+  <!-- Layered radial gradients -->
+  <div style="position:absolute; inset:0; background:
+    radial-gradient(ellipse 75% 55% at 18% 55%, rgba(61,139,130,0.20) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 70% at 82% 25%, rgba(158,107,90,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 90% at 50% 105%, rgba(42,101,96,0.28) 0%, transparent 55%);
+    z-index:0;"></div>
+
+  <!-- Triangle pattern -->
+  <div class="tri-pattern" style="position:absolute; inset:0; opacity:0.12; z-index:0;"></div>
+
+  <!-- Floating geometric shapes -->
+  <div class="float-1" style="position:absolute; top:22%; left:6%; width:88px; height:88px; border:1px solid rgba(61,139,130,0.28); transform:rotate(45deg); z-index:0;"></div>
+  <div class="float-2" style="position:absolute; bottom:28%; right:8%; width:56px; height:56px; border:1px solid rgba(158,107,90,0.3); transform:rotate(20deg); z-index:0;"></div>
+  <div class="float-3" style="position:absolute; top:35%; right:18%; width:130px; height:130px; border-radius:50%; border:1px solid rgba(61,139,130,0.15); z-index:0;"></div>
+  <div class="float-2" style="position:absolute; top:12%; right:30%; width:40px; height:40px; border:1px solid rgba(158,107,90,0.2); z-index:0;"></div>
+
+  <!-- Content -->
+  <div style="position:relative; z-index:2; text-align:left; padding:0 clamp(24px,6vw,96px); max-width:1280px; width:100%; margin:0 auto;">
+
+    <!-- Eyebrow -->
+    <div class="reveal" style="display:flex; justify-content:flex-start; margin-bottom:32px;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="width:1px; height:24px; background:var(--teal-light); opacity:0.5;"></div>
+        <p class="stag en-text" style="color:var(--teal-light); font-size:0.72rem; letter-spacing:0.3em; font-weight:600;">Est. 2017 · Amman, Jordan</p>
+        <p class="stag ar-text hidden" style="color:var(--teal-light); font-size:0.72rem; letter-spacing:0.15em; font-weight:600; font-family:'Tajawal',sans-serif;">تأسست 2017 · عمّان، الأردن</p>
+        <div style="width:1px; height:24px; background:var(--teal-light); opacity:0.5;"></div>
+      </div>
+    </div>
+
+    <!-- Tagline — emotional opener -->
+    <p class="reveal reveal-delay-1" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4.5vw,3.8rem); font-style:italic; font-weight:400; color:var(--teal-light); line-height:1.15; margin-bottom:20px; max-width:640px;">
+      <span class="en-text">Turning Visions into Reality</span>
+      <span class="ar-text hidden" style="font-style:normal; font-family:'Tajawal',sans-serif;">نحوّل الرؤى إلى واقع</span>
+    </p>
+
+    <!-- Heading — professional anchor -->
+    <h1 class="h-display reveal reveal-delay-2" style="font-size:clamp(1.9rem,4vw,3.4rem); color:var(--cream); margin-bottom:28px; max-width:600px; line-height:1.18;">
+      <span class="en-text">Expert Project Management<br>&amp; Interior Design</span>
+      <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif; font-style:normal;">إدارة مشاريع متخصصة<br>وتصميم داخلي احترافي</span>
+    </h1>
+
+    <!-- Separator -->
+    <div class="reveal reveal-delay-2" style="width:48px; height:1px; background:var(--terra); margin-bottom:24px;"></div>
+
+    <!-- Sub -->
+    <p class="reveal reveal-delay-3" style="font-size:1rem; color:rgba(245,240,235,0.6); line-height:1.75; max-width:480px; margin:0 0 40px;">
+      <span class="en-text">From strategic planning through final handover, we bring precision, accountability and creative excellence to every project we manage.</span>
+      <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">من التخطيط الاستراتيجي حتى التسليم النهائي، نجلب الدقة والمساءلة والتميز الإبداعي إلى كل مشروع نتولاه.</span>
+    </p>
+
+    <!-- CTAs -->
+    <div class="reveal reveal-delay-4" style="display:flex; flex-wrap:wrap; gap:14px; justify-content:flex-start;">
+      <a href="#services" class="btn-primary en-text">
+        Explore Our Services
+        <svg class="arrow-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="#services" class="btn-primary ar-text hidden" style="font-family:'Tajawal',sans-serif;">
+        اكتشف خدماتنا
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8l-4 4m0 0l4 4M3 12h18"/></svg>
+      </a>
+      <a href="#contact" class="btn-ghost en-text">Contact Us</a>
+      <a href="#contact" class="btn-ghost ar-text hidden" style="font-family:'Tajawal',sans-serif;">تواصل معنا</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute; bottom:32px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0.45; z-index:2;">
+    <span style="font-size:0.62rem; letter-spacing:0.25em; color:var(--cream); text-transform:uppercase;">Scroll</span>
+    <div style="width:1px; height:48px; background:rgba(245,240,235,0.15); overflow:hidden; border-radius:1px;">
+      <div class="scroll-bar" style="width:100%; height:60%; background:var(--teal-light); border-radius:1px;"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<section style="background:var(--teal-dark); position:relative; z-index:1;">
+  <div style="max-width:1280px; margin:0 auto; padding:32px 24px;">
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px;"
+         class="md:grid-cols-4" id="stats-grid">
+      <div class="reveal stat-box" style="text-align:center;">
+        <p class="stat-num">8<span style="font-size:1.6rem; color:var(--teal-light);">+</span></p>
+        <p class="stag" style="color:rgba(245,240,235,0.55); margin-top:6px;">
+          <span class="en-text">Years Experience</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">سنوات خبرة</span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay-1 stat-box" style="text-align:center;">
+        <p class="stat-num">50<span style="font-size:1.6rem; color:var(--teal-light);">+</span></p>
+        <p class="stag" style="color:rgba(245,240,235,0.55); margin-top:6px;">
+          <span class="en-text">Projects Delivered</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">مشروع منجز</span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2 stat-box" style="text-align:center;">
+        <p class="stat-num">5</p>
+        <p class="stag" style="color:rgba(245,240,235,0.55); margin-top:6px;">
+          <span class="en-text">Sectors</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">قطاعات</span>
+        </p>
+      </div>
+      <div class="reveal reveal-delay-3 stat-box" style="text-align:center;">
+        <p class="stat-num">6</p>
+        <p class="stag" style="color:rgba(245,240,235,0.55); margin-top:6px;">
+          <span class="en-text">Core Services</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">خدمة أساسية</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════ -->
+<section id="about" style="background:var(--cream); padding:96px 24px;">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; gap:64px; align-items:center;" class="lg:grid-cols-2">
+
+      <!-- Text -->
+      <div class="reveal">
+        <p class="stag" style="color:var(--teal); margin-bottom:12px;">
+          <span class="en-text">About Us</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">من نحن</span>
+        </p>
+        <h2 class="h-display" style="font-size:clamp(2rem,4vw,3rem); color:var(--dark); margin-bottom:20px;">
+          <span class="en-text">Osool Project<br>Management Company</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">شركة أصول<br>لإدارة المشاريع</span>
+        </h2>
+        <div class="sep" style="background:var(--terra); margin-bottom:24px;"></div>
+
+        <p style="font-size:0.97rem; color:#3d4a4a; line-height:1.82; margin-bottom:16px;" class="en-text">
+          Founded in Amman in 2017, Osool has built its reputation across interior design and project management. Following years of hands-on project delivery, the company was restructured in 2023 to become a fully integrated, market-leading practice.
+        </p>
+        <p style="font-size:0.97rem; color:#3d4a4a; line-height:1.82; margin-bottom:16px;" class="en-text">
+          Our multidisciplinary team of specialists applies the latest industry methodologies and tools — ensuring every project is delivered to the highest standard of accuracy and quality.
+        </p>
+        <p style="font-size:0.97rem; color:#3d4a4a; line-height:1.82;" class="en-text">
+          Committed to excellence, we merge creative design thinking with rigorous engineering discipline — continuously raising the standard of what great project management looks like.
+        </p>
+
+        <p style="font-size:0.97rem; color:#3d4a4a; line-height:1.82; margin-bottom:16px; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          تأسست أصول في عمّان عام 2017، وبنت سمعتها في مجال التصميم الداخلي وإدارة المشاريع. وعقب سنوات من تنفيذ المشاريع، أُعيد هيكلة الشركة عام 2023 لتصبح ممارسة متكاملة ورائدة في السوق.
+        </p>
+        <p style="font-size:0.97rem; color:#3d4a4a; line-height:1.82; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          يطبّق فريقنا متعدد التخصصات أحدث المنهجيات والأدوات في المجال — لضمان تسليم كل مشروع وفق أعلى معايير الدقة والجودة، مع التزامنا الراسخ بالتميز ودمج التفكير التصميمي الإبداعي مع الانضباط الهندسي الصارم.
+        </p>
+
+        <div style="margin-top:32px;">
+          <a href="#contact" class="btn-primary en-text" style="background:var(--dark); box-shadow:0 4px 20px rgba(26,37,37,0.2);">
+            Work With Us
+            <svg class="arrow-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#contact" class="btn-primary ar-text hidden" style="background:var(--dark); box-shadow:0 4px 20px rgba(26,37,37,0.2); font-family:'Tajawal',sans-serif;">
+            ابدأ معنا
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual -->
+      <div class="reveal reveal-delay-2" style="position:relative;">
+        <!-- Full-bleed photo -->
+        <div style="position:relative; border-radius:4px; overflow:hidden; min-height:520px; background:var(--dark-2);">
+          <img src="brand_assets/photo%20to%20use/business-people-teamwork.jpg.jpeg" alt="Osool Team"
+               style="width:100%; height:100%; object-fit:cover; object-position:center top; position:absolute; inset:0;">
+          <!-- Overlay gradient -->
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26,37,37,0.88) 0%, rgba(26,37,37,0.2) 60%, transparent 100%);"></div>
+          <!-- Quote overlay -->
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:32px;">
+            <p class="h-display" style="font-size:1.6rem; color:var(--cream); font-style:italic; margin-bottom:6px; line-height:1.3;">
+              "Precision in every phase.<br>Excellence in every detail."
+            </p>
+            <p class="stag" style="color:rgba(245,240,235,0.5);">Osool Project Management</p>
+          </div>
+          <!-- Founded badge (inline, top-right of photo) -->
+          <div style="position:absolute; top:24px; right:24px; padding:16px 20px; border-radius:12px; background:rgba(158,107,90,0.9); backdrop-filter:blur(8px);">
+            <p class="h-display" style="font-size:2rem; color:var(--cream); line-height:1;">2017</p>
+            <p style="font-size:0.7rem; color:rgba(245,240,235,0.85); margin-top:3px;" class="en-text">Est. Amman, Jordan</p>
+            <p style="font-size:0.7rem; color:rgba(245,240,235,0.85); margin-top:3px; font-family:'Tajawal',sans-serif;" class="ar-text hidden">تأسست في عمّان</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     WHY US STRIP
+════════════════════════════════════════════════ -->
+<aside style="background:var(--cream-2); padding:72px 24px; border-top:1px solid rgba(61,139,130,0.12); border-bottom:1px solid rgba(61,139,130,0.12);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; gap:40px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+
+      <!-- 1 -->
+      <div class="reveal" style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="width:52px; height:52px; border-radius:14px; background:rgba(61,139,130,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="24" height="24" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--dark); margin-bottom:6px; letter-spacing:-0.01em;" class="en-text">Single Point of Contact</h4>
+          <h4 style="font-family:'Tajawal',sans-serif; font-size:1.15rem; font-weight:600; color:var(--dark); margin-bottom:6px;" class="ar-text hidden">نقطة تواصل واحدة</h4>
+          <p style="font-size:0.9rem; color:#4a5a5a; line-height:1.72;" class="en-text">One dedicated team manages every phase — from concept through handover — so nothing falls between the cracks.</p>
+          <p style="font-size:0.9rem; color:#4a5a5a; line-height:1.72; font-family:'Tajawal',sans-serif;" class="ar-text hidden">فريق واحد متخصص يدير كل مرحلة من التصور حتى التسليم — حتى لا يضيع شيء.</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="reveal reveal-delay-1" style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="width:52px; height:52px; border-radius:14px; background:rgba(61,139,130,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="24" height="24" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--dark); margin-bottom:6px; letter-spacing:-0.01em;" class="en-text">Precision &amp; Efficiency</h4>
+          <h4 style="font-family:'Tajawal',sans-serif; font-size:1.15rem; font-weight:600; color:var(--dark); margin-bottom:6px;" class="ar-text hidden">الدقة والكفاءة</h4>
+          <p style="font-size:0.9rem; color:#4a5a5a; line-height:1.72;" class="en-text">On time, on budget, every phase. We apply rigorous schedule and cost controls to protect your investment.</p>
+          <p style="font-size:0.9rem; color:#4a5a5a; line-height:1.72; font-family:'Tajawal',sans-serif;" class="ar-text hidden">في الوقت المحدد وضمن الميزانية في كل مرحلة. نطبق ضوابط صارمة للجداول والتكاليف لحماية استثمارك.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="reveal reveal-delay-2" style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="width:52px; height:52px; border-radius:14px; background:rgba(61,139,130,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="24" height="24" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--dark); margin-bottom:6px; letter-spacing:-0.01em;" class="en-text">International Standards</h4>
+          <h4 style="font-family:'Tajawal',sans-serif; font-size:1.15rem; font-weight:600; color:var(--dark); margin-bottom:6px;" class="ar-text hidden">معايير دولية</h4>
+          <p style="font-size:0.9rem; color:#4a5a5a; line-height:1.72;" class="en-text">Exceeding client expectations since 2017 using globally recognised project management methodologies and best practices.</p>
+          <p style="font-size:0.9rem; color:#4a5a5a; line-height:1.72; font-family:'Tajawal',sans-serif;" class="ar-text hidden">تجاوز توقعات العملاء منذ 2017 باستخدام منهجيات وأفضل الممارسات المعترف بها دولياً في إدارة المشاريع.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</aside>
+
+
+<!-- ════════════════════════════════════════════════
+     VISION & MISSION
+════════════════════════════════════════════════ -->
+<section id="vision" class="grain relative" style="background:var(--dark); padding:96px 24px; overflow:hidden;">
+  <div class="tri-pattern" style="position:absolute; inset:0; opacity:0.07;"></div>
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(61,139,130,0.10) 0%, transparent 65%);"></div>
+
+  <div style="max-width:1280px; margin:0 auto; position:relative; z-index:2;">
+
+    <!-- Header -->
+    <div class="reveal" style="text-align:center; margin-bottom:56px;">
+      <p class="stag" style="color:var(--teal-light); margin-bottom:12px;">
+        <span class="en-text">Our Direction</span>
+        <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">توجهنا</span>
+      </p>
+      <h2 class="h-display" style="font-size:clamp(2rem,4vw,3rem); color:var(--cream);">
+        <span class="en-text">Vision &amp; Mission</span>
+        <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">الرؤية والرسالة</span>
+      </h2>
+    </div>
+
+    <!-- Cards -->
+    <div style="display:grid; gap:24px;" class="md:grid-cols-2">
+
+      <!-- Vision -->
+      <div class="reveal" style="padding:40px; border-radius:20px; background:var(--dark-2); border:1px solid rgba(90,173,163,0.14);">
+        <!-- Icon -->
+        <div style="width:48px; height:48px; border-radius:12px; background:rgba(61,139,130,0.14); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+          <svg width="22" height="22" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <!-- Accent + Title -->
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <div style="width:4px; height:36px; border-radius:4px; background:var(--teal); flex-shrink:0;"></div>
+          <h3 class="h-display" style="font-size:1.65rem; color:var(--cream);">
+            <span class="en-text">Our Vision</span>
+            <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">رؤيتنا</span>
+          </h3>
+        </div>
+        <p style="color:rgba(245,240,235,0.68); line-height:1.82; font-size:0.96rem;" class="en-text">
+          To be the regional benchmark for project management excellence — delivering services that consistently meet and surpass international standards, while keeping client goals, satisfaction and aspirations at the centre of everything we do.
+        </p>
+        <p style="color:rgba(245,240,235,0.68); line-height:1.82; font-size:0.96rem; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          أن نكون المعيار الذهبي لإدارة المشاريع في المنطقة — بتقديم خدمات تلتزم بالمعايير الدولية وترتقي إليها، مع إيلاء أهداف العميل ورضاه وتطلعاته الأولوية المطلقة في كل ما نقوم به.
+        </p>
+      </div>
+
+      <!-- Mission -->
+      <div class="reveal reveal-delay-2" style="padding:40px; border-radius:20px; background:var(--teal-dark); border:1px solid rgba(90,173,163,0.22);">
+        <div style="width:48px; height:48px; border-radius:12px; background:rgba(245,240,235,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+          <svg width="22" height="22" fill="none" stroke="var(--cream)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+          </svg>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <div style="width:4px; height:36px; border-radius:4px; background:rgba(245,240,235,0.7); flex-shrink:0;"></div>
+          <h3 class="h-display" style="font-size:1.65rem; color:var(--cream);">
+            <span class="en-text">Our Mission</span>
+            <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">مهمتنا</span>
+          </h3>
+        </div>
+        <p style="color:rgba(245,240,235,0.82); line-height:1.82; font-size:0.96rem;" class="en-text">
+          To leave a lasting impression on every project we touch — through distinguished service, modern design thinking, and a multidisciplinary team that consistently exceeds our clients' expectations.
+        </p>
+        <p style="color:rgba(245,240,235,0.82); line-height:1.82; font-size:0.96rem; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          ترك بصمة دائمة في كل مشروع نتولاه — من خلال خدمة متميزة وتصميم عصري، وفريق متعدد التخصصات يتجاوز دائماً توقعات عملائنا.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════════════ -->
+<section id="services" style="background:var(--cream-2); padding:96px 24px;">
+  <div style="max-width:1280px; margin:0 auto;">
+
+    <!-- Header -->
+    <div class="reveal" style="margin-bottom:56px;">
+      <p class="stag" style="color:var(--teal); margin-bottom:12px;">
+        <span class="en-text">What We Offer</span>
+        <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">ما نقدمه</span>
+      </p>
+      <h2 class="h-display" style="font-size:clamp(2rem,4vw,3rem); color:var(--dark); margin-bottom:12px;">
+        <span class="en-text">Our Services</span>
+        <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">خدماتنا</span>
+      </h2>
+      <p style="max-width:560px; font-size:0.95rem; color:#4a5a5a; line-height:1.7;" class="en-text">
+        Comprehensive project management solutions tailored to every stage of your project's lifecycle.
+      </p>
+      <p style="max-width:560px; font-size:0.95rem; color:#4a5a5a; line-height:1.7; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+        حلول شاملة لإدارة المشاريع في كل مرحلة من مراحل دورة حياة مشروعك.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div style="display:grid; gap:20px;" class="md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- 01 Projects Management -->
+      <div class="service-card reveal" style="padding:32px; border-radius:20px; background:linear-gradient(to top, rgba(26,37,37,0.97) 0%, rgba(26,37,37,0.55) 100%), url('brand_assets/photo to use/business-people-teamwork.jpg.jpeg') center/cover no-repeat; box-shadow:0 4px 12px rgba(26,37,37,0.12), 0 12px 40px rgba(26,37,37,0.1); display:flex; flex-direction:column;">
+        <div style="width:42px; height:42px; border-radius:10px; background:rgba(61,139,130,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3"/>
+          </svg>
+        </div>
+        <h3 class="h-display" style="font-size:1.35rem; color:var(--cream); margin-bottom:12px;">
+          <span class="en-text">Projects Management</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">إدارة المشاريع</span>
+        </h3>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78;" class="en-text">
+          We manage every phase of your project and operate as an extension of your organization — from pre-construction planning through to final handover, serving as your single point of accountability.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          ندير كل مراحل مشروعك ونعمل كامتداد لمؤسستك — من التخطيط ما قبل الإنشاء وحتى التسليم النهائي، كنقطة مساءلة واحدة وموحّدة.
+        </p>
+        <div style="margin-top:auto; padding-top:20px; border-top:1px solid rgba(245,240,235,0.07);">
+          <span class="stag" style="color:var(--teal); letter-spacing:0.18em;">01</span>
+        </div>
+      </div>
+
+      <!-- 02 Construction Management -->
+      <div class="service-card reveal reveal-delay-1" style="padding:32px; border-radius:20px; background:linear-gradient(to top, rgba(26,37,37,0.97) 0%, rgba(26,37,37,0.55) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80') center/cover no-repeat; box-shadow:0 4px 12px rgba(26,37,37,0.12), 0 12px 40px rgba(26,37,37,0.1); display:flex; flex-direction:column;">
+        <div style="width:42px; height:42px; border-radius:10px; background:rgba(61,139,130,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
+          </svg>
+        </div>
+        <h3 class="h-display" style="font-size:1.35rem; color:var(--cream); margin-bottom:12px;">
+          <span class="en-text">Construction Management</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">إدارة الإنشاءات</span>
+        </h3>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78;" class="en-text">
+          We structure your project into clearly defined work packages, managing and coordinating every one — delivering cost savings, greater flexibility and tighter control over time, budget and quality.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          نُقسِّم مشروعك إلى حزم عمل محددة ونتولى إدارتها وتنسيقها بالكامل — محققين وفورات في التكلفة ومرونة أكبر مع سيطرة أدق على الوقت والميزانية والجودة.
+        </p>
+        <div style="margin-top:auto; padding-top:20px; border-top:1px solid rgba(245,240,235,0.07);">
+          <span class="stag" style="color:var(--teal); letter-spacing:0.18em;">02</span>
+        </div>
+      </div>
+
+      <!-- 03 Design Management -->
+      <div class="service-card reveal reveal-delay-2" style="padding:32px; border-radius:20px; background:linear-gradient(to top, rgba(26,37,37,0.97) 0%, rgba(26,37,37,0.55) 100%), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80') center/cover no-repeat; box-shadow:0 4px 12px rgba(26,37,37,0.12), 0 12px 40px rgba(26,37,37,0.1); display:flex; flex-direction:column;">
+        <div style="width:42px; height:42px; border-radius:10px; background:rgba(158,107,90,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="var(--terra-light)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
+          </svg>
+        </div>
+        <h3 class="h-display" style="font-size:1.35rem; color:var(--cream); margin-bottom:12px;">
+          <span class="en-text">Design Management</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">إدارة التصميم</span>
+        </h3>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78;" class="en-text">
+          We lead the design process on your behalf — sourcing and appointing the right architects and specialist engineers, coordinating their outputs and ensuring full alignment across every design stage.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          نقود عملية التصميم نيابةً عنك — باختيار وتعيين المهندسين المعماريين والمتخصصين المناسبين، وتنسيق مخرجاتهم وضمان التوافق الكامل في كل مرحلة تصميمية.
+        </p>
+        <div style="margin-top:auto; padding-top:20px; border-top:1px solid rgba(245,240,235,0.07);">
+          <span class="stag" style="color:var(--terra); letter-spacing:0.18em;">03</span>
+        </div>
+      </div>
+
+      <!-- 04 Bid Management -->
+      <div class="service-card reveal reveal-delay-1" style="padding:32px; border-radius:20px; background:linear-gradient(to top, rgba(26,37,37,0.97) 0%, rgba(26,37,37,0.55) 100%), url('https://picsum.photos/seed/pm04/600/400') center/cover no-repeat; box-shadow:0 4px 12px rgba(26,37,37,0.12), 0 12px 40px rgba(26,37,37,0.1); display:flex; flex-direction:column;">
+        <div style="width:42px; height:42px; border-radius:10px; background:rgba(61,139,130,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+          </svg>
+        </div>
+        <h3 class="h-display" style="font-size:1.35rem; color:var(--cream); margin-bottom:12px;">
+          <span class="en-text">Bid Management</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">إدارة العطاءات</span>
+        </h3>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78;" class="en-text">
+          We manage the full tender process on your behalf — compiling a qualified shortlist from our contractor database, evaluating bids, and preparing contracts ready for execution.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          ندير عملية العطاءات بالكامل نيابةً عنك — من إعداد القائمة المختصرة للمقاولين المؤهلين وتقييم العروض، إلى تجهيز العقود جاهزةً للتوقيع.
+        </p>
+        <div style="margin-top:auto; padding-top:20px; border-top:1px solid rgba(245,240,235,0.07);">
+          <span class="stag" style="color:var(--teal); letter-spacing:0.18em;">04</span>
+        </div>
+      </div>
+
+      <!-- 05 Customer Representation -->
+      <div class="service-card reveal reveal-delay-2" style="padding:32px; border-radius:20px; background:linear-gradient(to top, rgba(26,37,37,0.97) 0%, rgba(26,37,37,0.55) 100%), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80') center/cover no-repeat; box-shadow:0 4px 12px rgba(26,37,37,0.12), 0 12px 40px rgba(26,37,37,0.1); display:flex; flex-direction:column;">
+        <div style="width:42px; height:42px; border-radius:10px; background:rgba(158,107,90,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="var(--terra-light)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+          </svg>
+        </div>
+        <h3 class="h-display" style="font-size:1.35rem; color:var(--cream); margin-bottom:12px;">
+          <span class="en-text">Customer Representation</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">تمثيل العملاء</span>
+        </h3>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78;" class="en-text">
+          We act as your independent representative — overseeing the project manager, consultants and contractors, providing expert guidance and ensuring every major decision serves your best interests.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(245,240,235,0.58); line-height:1.78; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          نمثّلك بشكل مستقل — نُشرف على مدير المشروع والمستشارين والمقاولين، ونقدم التوجيه الخبير لضمان أن كل قرار مصيري يصبّ في مصلحتك.
+        </p>
+        <div style="margin-top:auto; padding-top:20px; border-top:1px solid rgba(245,240,235,0.07);">
+          <span class="stag" style="color:var(--terra); letter-spacing:0.18em;">05</span>
+        </div>
+      </div>
+
+      <!-- 06 Consulting Services -->
+      <div class="service-card reveal reveal-delay-3" style="padding:32px; border-radius:20px; background:linear-gradient(to top, rgba(42,101,96,0.97) 0%, rgba(42,101,96,0.6) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80') center/cover no-repeat; border:1px solid rgba(90,173,163,0.22); box-shadow:0 4px 12px rgba(26,37,37,0.12), 0 12px 40px rgba(26,37,37,0.1); display:flex; flex-direction:column;">
+        <div style="width:42px; height:42px; border-radius:10px; background:rgba(245,240,235,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <svg width="20" height="20" fill="none" stroke="var(--cream)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
+        <h3 class="h-display" style="font-size:1.35rem; color:var(--cream); margin-bottom:16px;">
+          <span class="en-text">Consulting Services</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">الخدمات الاستشارية</span>
+        </h3>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;" class="en-text">
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> Value Engineering / Design Review</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> Cost Analysis &amp; Valuation</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> Schedule Management</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> Claims Management</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> Project Trouble Shooting</li>
+        </ul>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> هندسة القيمة / مراجعة التصميم</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> تحليل التكاليف والتقييم</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> إدارة الجداول الزمنية</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> إدارة المطالبات</li>
+          <li style="font-size:0.88rem; color:rgba(245,240,235,0.82); display:flex; align-items:center; gap:8px;"><span style="color:var(--teal-xlight);">—</span> حل مشكلات المشاريع</li>
+        </ul>
+        <div style="margin-top:auto; padding-top:20px; border-top:1px solid rgba(245,240,235,0.12);">
+          <span class="stag" style="color:rgba(245,240,235,0.45); letter-spacing:0.18em;">06</span>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     CLIENTS
+════════════════════════════════════════════════ -->
+<section id="clients" style="background:var(--cream); padding:96px 24px;">
+  <div style="max-width:1280px; margin:0 auto;">
+
+    <!-- Header -->
+    <div class="reveal" style="text-align:center; margin-bottom:64px;">
+      <p class="stag" style="color:var(--teal); margin-bottom:12px;">
+        <span class="en-text">Who We Serve</span>
+        <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">من نخدم</span>
+      </p>
+      <h2 class="h-display" style="font-size:clamp(2rem,4vw,3rem); color:var(--dark);">
+        <span class="en-text">Our Clients &amp; Projects</span>
+        <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">عملاؤنا ومشاريعنا</span>
+      </h2>
+    </div>
+
+    <!-- 2023 -->
+    <div class="reveal" style="margin-bottom:52px;">
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+        <div style="width:4px; height:36px; border-radius:4px; background:var(--teal);"></div>
+        <div>
+          <p class="stag" style="color:var(--teal);">Projects</p>
+          <p class="h-display" style="font-size:1.6rem; color:var(--dark);">2023</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="client-badge en-text">Villa Mr. Salem Al-Umari</div>
+        <div class="client-badge en-text">Jabal Amman Hotel Project</div>
+        <div class="client-badge en-text">Project Mr. Khader Al-Halteh</div>
+        <div class="client-badge en-text">Villa Mr. Mohammed Musleh</div>
+        <div class="client-badge en-text">Villa Mr. Rami Al-Asaad</div>
+        <div class="client-badge en-text">Villa Mr. Feras Siory</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">فيلا السيد سالم العمري</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">مشروع فندق جبل عمّان</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">مشروع السيد خضر الحلتة</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">فيلا السيد محمد مصلح</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">فيلا السيد رامي الأسعد</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">فيلا السيد فراس سيوري</div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="reveal" style="margin-bottom:64px;">
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+        <div style="width:4px; height:36px; border-radius:4px; background:var(--terra);"></div>
+        <div>
+          <p class="stag" style="color:var(--terra);">Projects</p>
+          <p class="h-display" style="font-size:1.6rem; color:var(--dark);">2024</p>
+        </div>
+      </div>
+      <div style="display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="client-badge en-text">Almasar Engineering Co.</div>
+        <div class="client-badge en-text">AiMnterfon Aljodd Offices</div>
+        <div class="client-badge en-text">Plus 360° Office</div>
+        <div class="client-badge en-text">Sips Coffee House</div>
+        <div class="client-badge en-text">Al-Sheikh Dairy Farms</div>
+        <div class="client-badge en-text">Jordanian Royal Medical Services</div>
+        <div class="client-badge en-text">The St. Regis — Amman</div>
+        <div class="client-badge en-text">Gusti — Dabouq</div>
+        <div class="client-badge en-text">Villa Mr. Rafat Abu Libeh</div>
+        <div class="client-badge en-text">Private Apartments &amp; Offices Portfolio</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">شركة المسار الهندسية</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">مكاتب AiMnterfon الجد</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">مكتب بلاس 360°</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">مقهى سيبس</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">مزارع الشيخ للألبان</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">الخدمات الطبية الملكية الأردنية</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">سانت ريجيس عمّان</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">غوستي — الدبوق</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">فيلا السيد رأفت أبو ليبة</div>
+        <div class="client-badge ar-text hidden" style="font-family:'Tajawal',sans-serif;">محفظة شقق ومكاتب خاصة</div>
+      </div>
+    </div>
+
+    <!-- Featured Projects — Photo Grid -->
+    <div class="reveal" style="margin-bottom:64px;">
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:28px;">
+        <div style="width:4px; height:36px; border-radius:4px; background:var(--teal);"></div>
+        <div>
+          <p class="stag" style="color:var(--teal);">
+            <span class="en-text">Featured Work</span>
+            <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">أبرز أعمالنا</span>
+          </p>
+          <p class="h-display" style="font-size:1.6rem; color:var(--dark);">
+            <span class="en-text">Selected Projects</span>
+            <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">مشاريع مختارة</span>
+          </p>
+        </div>
+      </div>
+
+      <div style="display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+
+        <!-- Project 1 -->
+        <div style="position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/3; background:var(--dark-2);">
+          <img src="brand_assets/photo to use/St. regis amman.webp" alt="The St. Regis Amman"
+               style="width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26,37,37,0.9) 0%, transparent 55%);"></div>
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 22px;">
+            <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-light); font-family:'Jost',sans-serif; font-weight:600;" class="en-text">Hotel · 2024</span>
+            <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-light); font-family:'Tajawal',sans-serif;" class="ar-text hidden">فندق · 2024</span>
+            <p class="h-display en-text" style="font-size:1.2rem; color:var(--cream); margin-top:4px;">The St. Regis — Amman</p>
+            <p class="h-display ar-text hidden" style="font-size:1.2rem; color:var(--cream); margin-top:4px; font-family:'Tajawal',sans-serif;">سانت ريجيس — عمّان</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div style="position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/3; background:var(--dark-2);">
+          <img src="brand_assets/photo to use/Jabal Amman Hotel.jpg" alt="Jabal Amman Hotel"
+               style="width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26,37,37,0.9) 0%, transparent 55%);"></div>
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 22px;">
+            <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-light); font-family:'Jost',sans-serif; font-weight:600;" class="en-text">Hospitality · 2023</span>
+            <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-light); font-family:'Tajawal',sans-serif;" class="ar-text hidden">ضيافة · 2023</span>
+            <p class="h-display en-text" style="font-size:1.2rem; color:var(--cream); margin-top:4px;">Jabal Amman Hotel</p>
+            <p class="h-display ar-text hidden" style="font-size:1.2rem; color:var(--cream); margin-top:4px; font-family:'Tajawal',sans-serif;">فندق جبل عمّان</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div style="position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/3; background:var(--dark-2);">
+          <img src="brand_assets/photo to use/Sips Coffee House.jpg" alt="Sips Coffee House"
+               style="width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26,37,37,0.9) 0%, transparent 55%);"></div>
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 22px;">
+            <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-light); font-family:'Jost',sans-serif; font-weight:600;" class="en-text">Interior Design · 2024</span>
+            <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-light); font-family:'Tajawal',sans-serif;" class="ar-text hidden">تصميم داخلي · 2024</span>
+            <p class="h-display en-text" style="font-size:1.2rem; color:var(--cream); margin-top:4px;">Sips Coffee House</p>
+            <p class="h-display ar-text hidden" style="font-size:1.2rem; color:var(--cream); margin-top:4px; font-family:'Tajawal',sans-serif;">مقهى سيبس</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Notable Partners — Infinite Slider -->
+    <div class="reveal">
+
+      <!-- Heading -->
+      <div style="text-align:center; margin-bottom:28px;">
+        <p class="h-display" style="font-size:1.5rem; color:var(--dark); line-height:1.3;">
+          <span class="en-text" style="color:#5a6a6a; font-weight:400;">Trusted Partners</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif; color:#5a6a6a; font-weight:400;">الشركاء</span>
+          <br>
+          <span class="en-text" style="font-weight:600; color:var(--dark);">&amp; Organizations.</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif; font-weight:600; color:var(--dark);">والمنظمات البارزة.</span>
+        </p>
+      </div>
+
+      <!-- Top separator -->
+      <div style="height:1px; background:rgba(61,139,130,0.25); margin-bottom:20px;
+        -webkit-mask-image:linear-gradient(to right,transparent,black,transparent);
+        mask-image:linear-gradient(to right,transparent,black,transparent);"></div>
+
+      <!-- Infinite slider -->
+      <div class="lc-cloud" id="lc-cloud">
+        <div class="lc-track" id="lc-track">
+
+          <!-- ── Set A ── -->
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; letter-spacing:0.01em;">iPARK <span style="font-size:0.6em; letter-spacing:0.2em; color:var(--teal);">JORDAN</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Bayt<span style="color:var(--teal);">.</span>com</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;">OFFTEC</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.03em;">Sama <span style="color:var(--teal);">Jordan</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;">Royal Scientific Society</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; letter-spacing:0.06em;">St. Regis <span style="font-weight:300; color:#5a6a6a;">Amman</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">Almarai</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:0.02em;">Royal Hashemite Court</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:1.1rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal);">Zain</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;">PSUT <span style="color:var(--teal);">Alumni</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:0.02em;">Jordanian Royal <span style="color:var(--teal);">Medical</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; font-style:italic;">Gusti</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <!-- ── Set B (duplicate for seamless loop) ── -->
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; letter-spacing:0.01em;">iPARK <span style="font-size:0.6em; letter-spacing:0.2em; color:var(--teal);">JORDAN</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Bayt<span style="color:var(--teal);">.</span>com</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;">OFFTEC</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:500; letter-spacing:0.03em;">Sama <span style="color:var(--teal);">Jordan</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;">Royal Scientific Society</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; letter-spacing:0.06em;">St. Regis <span style="font-weight:300; color:#5a6a6a;">Amman</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">Almarai</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:0.02em;">Royal Hashemite Court</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:1.1rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal);">Zain</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Jost',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;">PSUT <span style="color:var(--teal);">Alumni</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:0.02em;">Jordanian Royal <span style="color:var(--teal);">Medical</span></span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+          <span class="lc-logo" style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; font-style:italic;">Gusti</span>
+          <span class="lc-dot" aria-hidden="true"></span>
+
+        </div>
+      </div>
+
+      <!-- Bottom separator -->
+      <div style="height:1px; background:rgba(61,139,130,0.25); margin-top:20px;
+        -webkit-mask-image:linear-gradient(to right,transparent,black,transparent);
+        mask-image:linear-gradient(to right,transparent,black,transparent);"></div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════ -->
+<section id="contact" class="grain relative" style="background:var(--dark); padding:96px 24px; overflow:hidden;">
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 0% 50%, rgba(61,139,130,0.12) 0%, transparent 60%); z-index:0;"></div>
+
+  <div style="max-width:1280px; margin:0 auto; position:relative; z-index:2;">
+    <div style="display:grid; gap:64px; align-items:start;" class="lg:grid-cols-2">
+
+      <!-- Info -->
+      <div class="reveal">
+        <p class="stag" style="color:var(--teal-light); margin-bottom:12px;">
+          <span class="en-text">Get In Touch</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">تواصل معنا</span>
+        </p>
+        <h2 class="h-display" style="font-size:clamp(2rem,4vw,3rem); color:var(--cream); margin-bottom:20px;">
+          <span class="en-text">Let's Build<br>Something Together</span>
+          <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">لنبني<br>شيئاً معاً</span>
+        </h2>
+        <div class="sep" style="background:var(--terra); margin-bottom:28px;"></div>
+        <p style="color:rgba(245,240,235,0.62); line-height:1.82; margin-bottom:40px;" class="en-text">
+          Have a project in mind? We'd welcome the conversation. Tell us what you're building and we'll bring the expertise, structure and dedication to see it through.
+        </p>
+        <p style="color:rgba(245,240,235,0.62); line-height:1.82; margin-bottom:40px; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+          هل لديك مشروع في الأفق؟ يسعدنا أن نستمع. أخبرنا بما تبني، وسنجلب الخبرة والهيكلية والتفاني اللازمين لإيصاله إلى خط النهاية.
+        </p>
+
+        <!-- Details -->
+        <div style="display:flex; flex-direction:column; gap:20px;">
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:rgba(61,139,130,0.14); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="stag" style="color:rgba(245,240,235,0.38); margin-bottom:4px;">
+                <span class="en-text">Office</span>
+                <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">المكتب</span>
+              </p>
+              <p style="color:var(--cream); font-size:0.93rem; line-height:1.6;" class="en-text">Amman, 7th Circle · Ibn Mulaa Street<br>Building No. 13 · 1st Floor · Office 120</p>
+              <p style="color:var(--cream); font-size:0.93rem; line-height:1.6; font-family:'Tajawal',sans-serif;" class="ar-text hidden">عمّان، الدوار السابع · شارع ابن ملا<br>مبنى رقم 13 · الطابق الأول · مكتب 120</p>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:rgba(61,139,130,0.14); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="stag" style="color:rgba(245,240,235,0.38); margin-bottom:4px;">Phone</p>
+              <a href="tel:+962776334444" style="color:var(--cream); font-size:0.93rem; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">+962 776334444</a>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:rgba(61,139,130,0.14); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+              </svg>
+            </div>
+            <div>
+              <p class="stag" style="color:rgba(245,240,235,0.38); margin-bottom:4px;">Email</p>
+              <a href="mailto:info@osoolprojects.com" style="color:var(--cream); font-size:0.93rem; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">info@osoolprojects.com</a>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:rgba(61,139,130,0.14); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" fill="none" stroke="var(--teal-light)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="stag" style="color:rgba(245,240,235,0.38); margin-bottom:4px;">Instagram</p>
+              <a href="https://instagram.com/osoolprojects" target="_blank" rel="noopener" style="color:var(--cream); font-size:0.93rem; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">@Osoolprojects</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Office Hours + Map -->
+      <div class="reveal reveal-delay-2" style="display:flex; flex-direction:column; gap:20px;">
+
+        <!-- Office Hours card -->
+        <div style="padding:32px; border-radius:20px; background:var(--dark-2); border:1px solid rgba(90,173,163,0.1);">
+          <h3 class="h-display" style="font-size:1.55rem; color:var(--cream); margin-bottom:22px; letter-spacing:-0.02em;">
+            <span class="en-text">Office Hours</span>
+            <span class="ar-text hidden" style="font-family:'Tajawal',sans-serif;">ساعات العمل</span>
+          </h3>
+          <div style="display:flex; flex-direction:column; gap:0;">
+
+            <!-- Sun–Thu -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:13px 0; border-bottom:1px solid rgba(90,173,163,0.08);">
+              <span class="en-text" style="font-size:0.9rem; color:rgba(245,240,235,0.65); font-family:'Jost',sans-serif;">Sunday – Thursday</span>
+              <span class="ar-text hidden" style="font-size:0.9rem; color:rgba(245,240,235,0.65); font-family:'Tajawal',sans-serif;">الأحد – الخميس</span>
+              <span style="font-size:0.9rem; color:var(--teal-light); font-family:'Jost',sans-serif; font-weight:500;">9:00 AM – 5:00 PM</span>
+            </div>
+
+            <!-- Friday -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:13px 0; border-bottom:1px solid rgba(90,173,163,0.08);">
+              <span class="en-text" style="font-size:0.9rem; color:rgba(245,240,235,0.65); font-family:'Jost',sans-serif;">Friday</span>
+              <span class="ar-text hidden" style="font-size:0.9rem; color:rgba(245,240,235,0.65); font-family:'Tajawal',sans-serif;">الجمعة</span>
+              <span style="font-size:0.9rem; color:var(--teal-light); font-family:'Jost',sans-serif; font-weight:500;">9:00 AM – 1:00 PM</span>
+            </div>
+
+            <!-- Saturday -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:13px 0;">
+              <span class="en-text" style="font-size:0.9rem; color:rgba(245,240,235,0.65); font-family:'Jost',sans-serif;">Saturday</span>
+              <span class="ar-text hidden" style="font-size:0.9rem; color:rgba(245,240,235,0.65); font-family:'Tajawal',sans-serif;">السبت</span>
+              <span class="en-text" style="font-size:0.88rem; color:rgba(245,240,235,0.32); font-family:'Jost',sans-serif;">Closed</span>
+              <span class="ar-text hidden" style="font-size:0.88rem; color:rgba(245,240,235,0.32); font-family:'Tajawal',sans-serif;">مغلق</span>
+            </div>
+          </div>
+
+          <!-- Address note -->
+          <div style="margin-top:20px; padding:14px 16px; border-radius:12px; background:rgba(61,139,130,0.07); border:1px solid rgba(61,139,130,0.12); display:flex; align-items:flex-start; gap:12px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal-light)" stroke-width="1.5" style="flex-shrink:0; margin-top:2px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div>
+              <p class="en-text" style="font-size:0.82rem; color:rgba(245,240,235,0.5); line-height:1.6; font-family:'Jost',sans-serif;">7th Circle, Ibn Mulaa St., Bldg 13<br>1st Floor, Office 120 · Amman, Jordan</p>
+              <p class="ar-text hidden" style="font-size:0.82rem; color:rgba(245,240,235,0.5); line-height:1.7; font-family:'Tajawal',sans-serif; direction:rtl;">الدوار السابع، شارع ابن ملاء، مبنى 13<br>الطابق الأول، مكتب 120 · عمّان، الأردن</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map embed -->
+        <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(90,173,163,0.1); height:260px; position:relative;">
+          <iframe
+            title="Osool office location"
+            src="https://maps.google.com/maps?q=7th+Circle+Amman+Jordan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%"
+            style="border:0; display:block; filter:grayscale(0.3) contrast(1.05);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <!-- teal tint overlay -->
+          <div style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(61,139,130,0.08) 0%, transparent 60%); pointer-events:none;"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer style="background:#0f1a1a; border-top:1px solid rgba(245,240,235,0.05); padding:32px 24px;">
+  <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+
+    <div>
+      <img src="brand_assets/osool-logo.png" alt="Osool" style="height:36px; width:auto; opacity:0.85;">
+    </div>
+
+    <p style="font-size:0.75rem; color:rgba(245,240,235,0.28); text-align:center;" class="en-text">
+      © 2025 Osool Project Management · Amman, Jordan · All rights reserved
+    </p>
+    <p style="font-size:0.75rem; color:rgba(245,240,235,0.28); text-align:center; font-family:'Tajawal',sans-serif;" class="ar-text hidden">
+      © 2025 شركة أصول لإدارة المشاريع · عمّان، الأردن · جميع الحقوق محفوظة
+    </p>
+
+    <div style="display:flex; gap:20px;">
+      <a href="tel:+962776334444" style="font-size:0.75rem; color:rgba(245,240,235,0.3); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='rgba(245,240,235,0.3)'">+962 776334444</a>
+      <a href="mailto:info@osoolprojects.com" style="font-size:0.75rem; color:rgba(245,240,235,0.3); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='rgba(245,240,235,0.3)'">info@osoolprojects.com</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════ -->
+<script>
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Navbar scroll ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 56) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  }, { passive: true });
+
+  // ── Mobile menu ──
+  const toggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // ── Language switcher ──
+  let lang = 'en';
+
+  function _showEl(el) {
+    el.hidden = false;
+    el.classList.remove('hidden');
+    el.style.removeProperty('display');
+    el.setAttribute('aria-hidden', 'false');
+  }
+  function _hideEl(el) {
+    el.hidden = true;
+    el.setAttribute('aria-hidden', 'true');
+  }
+
+  function applyLang(l) {
+    lang = l;
+    const isAr = l === 'ar';
+    document.documentElement.lang = isAr ? 'ar' : 'en';
+    document.documentElement.dir  = isAr ? 'rtl' : 'ltr';
+    document.body.style.fontFamily = isAr ? "'Tajawal',sans-serif" : "'Jost',sans-serif";
+
+    document.querySelectorAll('.en-text').forEach(el => isAr ? _hideEl(el) : _showEl(el));
+    document.querySelectorAll('.ar-text').forEach(el => isAr ? _showEl(el) : _hideEl(el));
+
+    ['lang-en','lang-en-m'].forEach(id => {
+      const b = document.getElementById(id); if (b) b.classList.toggle('active', !isAr);
+    });
+    ['lang-ar','lang-ar-m'].forEach(id => {
+      const b = document.getElementById(id); if (b) b.classList.toggle('active', isAr);
+    });
+  }
+
+  // Initial state — authoritative single-pass hide using HTML hidden attribute
+  document.querySelectorAll('.ar-text').forEach(el => {
+    el.classList.remove('hidden');
+    el.style.removeProperty('display');
+    el.hidden = true;
+    el.setAttribute('aria-hidden', 'true');
+  });
+  document.querySelectorAll('.en-text').forEach(el => {
+    el.setAttribute('aria-hidden', 'false');
+  });
+
+  document.getElementById('lang-en').addEventListener('click',   () => applyLang('en'));
+  document.getElementById('lang-ar').addEventListener('click',   () => applyLang('ar'));
+  document.getElementById('lang-en-m').addEventListener('click', () => applyLang('en'));
+  document.getElementById('lang-ar-m').addEventListener('click', () => applyLang('ar'));
+
+  // ── Smooth scroll with offset ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+
+  // ── Stats grid responsive ──
+  const statsGrid = document.getElementById('stats-grid');
+  if (statsGrid) {
+    const updateGrid = () => {
+      statsGrid.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(4,1fr)' : 'repeat(2,1fr)';
+    };
+    updateGrid();
+    window.addEventListener('resize', updateGrid, { passive: true });
+  }
+
+  // ── Services grid responsive ──
+  document.querySelectorAll('.md\\:grid-cols-2').forEach(el => {
+    const updateCols = () => {
+      const cols = window.innerWidth >= 768 ? 2 : 1;
+      el.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    };
+    updateCols();
+    window.addEventListener('resize', updateCols, { passive: true });
+  });
+  document.querySelectorAll('.lg\\:grid-cols-2').forEach(el => {
+    const updateCols = () => {
+      const cols = window.innerWidth >= 1024 ? 2 : 1;
+      el.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    };
+    updateCols();
+    window.addEventListener('resize', updateCols, { passive: true });
+  });
+  document.querySelectorAll('.md\\:grid-cols-2.lg\\:grid-cols-3').forEach(el => {
+    const updateCols = () => {
+      const cols = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      el.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    };
+    updateCols();
+    window.addEventListener('resize', updateCols, { passive: true });
+  });
+  document.querySelectorAll('.md\\:hidden, .hidden.md\\:flex').forEach(() => {});
+</script>
+</body>
+</html>

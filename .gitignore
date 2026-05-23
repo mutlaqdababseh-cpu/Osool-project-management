@@ -1,0 +1,19 @@
+# Dev / tooling — not needed on the server
+serve.mjs
+screenshot.mjs
+screenshot-full.mjs
+screenshot-sections.mjs
+full-review.mjs
+CLAUDE.md
+.claude/
+temporary screenshots/
+
+# Unused brand assets
+brand_assets/cp in english/
+brand_assets/cp in arabic/
+brand_assets/osool logo (2).png
+brand_assets/photo to use/Gemini_Generated_Image_d10potd10potd10p.png
+
+# OS junk
+.DS_Store
+Thumbs.db
