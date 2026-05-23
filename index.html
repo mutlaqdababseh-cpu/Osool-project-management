@@ -1304,8 +1304,16 @@
   // ── Scroll reveal ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, { threshold: 0, rootMargin: '0px 0px 60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => {
+    // Immediately show elements already in the viewport on page load
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 
   // ── Navbar scroll ──
   const navbar = document.getElementById('navbar');
