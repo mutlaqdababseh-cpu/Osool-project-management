@@ -18,3 +18,5 @@ brand_assets/photos/Gemini_Generated_Image_d10potd10potd10p.png
 # OS junk
 .DS_Store
 Thumbs.db
+
+.vercel
